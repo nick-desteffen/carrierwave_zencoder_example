@@ -24,7 +24,7 @@ class VideoUploader < CarrierWave::Uploader::Base
                                               :output => [{:base_url => "cf://rackspace_username:rackspace_api_key@blog.uploads/uploads/video/attachment/#{@model.id}",
                                                            :filename => "video.mp4",
                                                            :label => "web",
-                                                           :notifications => [zencoder_callback_url(:protocol => 'https')],
+                                                           :notifications => [zencoder_callback_url(:protocol => 'http')],
                                                            :video_codec => "h264",
                                                            :audio_codec => "aac",
                                                            :quality => 3,
