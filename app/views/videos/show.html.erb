@@ -1,6 +1,6 @@
 <% if @video.attachment_url.present? && @video.processed? %>
-  <video tabindex="0" idth="380" controls="controls" preload="" height="240">
-    <source src="<%= @video.attachment.url %>" type="video/mp4; codecs="avc1.42E01E, mp4a.40.2"">
+  <video width="380" controls="controls" preload="preload" height="240">
+    <source src="<%= @video.attachment.url %>" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
   </video>
 <% else %>
   <p>Please be patient while we process this video</p>
