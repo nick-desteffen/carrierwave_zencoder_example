@@ -18,6 +18,10 @@ end
 
 gem 'jquery-rails'
 
+gem "carrierwave"
+gem "fog"
+gem "zencoder"
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

@@ -7,3 +7,5 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.uploadify-v2.1.4/jquery.uploadify.v2.1.4.min
+//= require jquery.uploadify-v2.1.4/swfobject
