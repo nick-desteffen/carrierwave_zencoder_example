@@ -1,4 +1,10 @@
 CarrierwaveZencoderExample::Application.routes.draw do
+  get "videos/index"
+
+  get "videos/show"
+
+  get "videos/new"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -57,5 +63,8 @@ CarrierwaveZencoderExample::Application.routes.draw do
   # match ':controller(/:action(/:id(.:format)))'
   
   post "zencoder-callback" => "zencoder_callback#create", :as => "zencoder_callback"
+  
+  resources :videos
+  root :to => "videos#index"
   
 end

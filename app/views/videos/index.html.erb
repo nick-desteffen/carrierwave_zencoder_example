@@ -1,0 +1,4 @@
+<%= link_to "New Video", new_video_path %><br><br>
+<% Video.all.each do |video| %>
+  <%= link_to "Video ##{video.id}", video_path(video) %><br>
+<% end %>

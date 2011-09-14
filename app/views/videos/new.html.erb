@@ -1,0 +1,32 @@
+<h2>Upload your Video</h2>
+<div id="video_attachment"></div>
+<%= link_to "Video Listing", videos_path %>
+ 
+ 
+<script type="text/javascript">
+  $(function() {
+    <% session_key = Rails.application.config.session_options[:key] %>
+    var uploadify_script_data = {};
+    var csrf_token = $('meta[name=csrf-token]').attr('content');
+    var csrf_param = $('meta[name=csrf-param]').attr('content');
+ 
+    uploadify_script_data[csrf_param] = encodeURI(encodeURIComponent(csrf_token));
+    uploadify_script_data['<%= session_key %>'] = '<%= cookies[session_key] %>';
+ 
+    $('#video_attachment').uploadify({
+      uploader  : '<%= asset_path("jquery.uploadify-v2.1.4/uploadify.swf") %>',
+      script    : '<%= videos_path %>',
+      wmode     : 'transparent',
+      fileDataName    : 'attachment',
+      scriptData : uploadify_script_data,
+      auto      : true,
+      buttonText : 'Browse',
+      onAllComplete : function(event, data){
+        alert("Success!  Please be patient while the video processes.");
+      },
+      onError: function(event, ID, fileObj, errorObj){
+        alert("There was an error with the file you tried uploading.\n Please verify that it is the correct type.")
+      }
+    });
+  });
+</script>
