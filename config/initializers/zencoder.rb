@@ -1,0 +1,1 @@
+Zencoder.api_key = 'YOUR_ZENCODER_API_KEY'
