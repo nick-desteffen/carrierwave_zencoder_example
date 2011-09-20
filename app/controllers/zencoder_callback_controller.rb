@@ -10,10 +10,10 @@ class ZencoderCallbackController < ApplicationController
     end
  
     json = JSON.parse(zencoder_response)
-    job_id = json["output"]["id"]
+    output_id = json["output"]["id"]
     job_state = json["output"]["state"]
  
-    video = Video.find_by_zencoder_output_id(job_id)
+    video = Video.find_by_zencoder_output_id(output_id)
     if job_state == "finished" && video
       video.processed!
     end
