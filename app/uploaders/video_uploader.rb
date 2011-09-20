@@ -37,7 +37,7 @@ class VideoUploader < CarrierWave::Uploader::Base
  
     zencoder_response.body["outputs"].each do |output|
       if output["label"] == "web"
-        @model.zencoder_job_id = output["id"]
+        @model.zencoder_output_id = output["id"]
         @model.processed = false
         @model.save(:validate => false)
       end

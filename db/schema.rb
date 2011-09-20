@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110914040245) do
+ActiveRecord::Schema.define(:version => 20110920003455) do
 
   create_table "videos", :force => true do |t|
     t.string   "attachment"
-    t.string   "zencoder_job_id"
+    t.string   "zencoder_output_id"
     t.boolean  "processed"
     t.datetime "created_at"
     t.datetime "updated_at"

@@ -2,10 +2,10 @@
 
 one:
   attachment: MyString
-  zencoder_job_id: MyString
+  zencoder_output_id: MyString
   processed: false
 
 two:
   attachment: MyString
-  zencoder_job_id: MyString
+  zencoder_output_id: MyString
   processed: false
